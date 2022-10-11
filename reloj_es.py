@@ -1,4 +1,4 @@
-
+import modulovoz
 from datetime import datetime
 hora_string={00:"las doce",1:"La una",2:"las dos",3:"las tres", 4:"las cuatro",5:"las cinco",6:"las seis",7:"las siete",8:"las ocho",
 9:"las nueve",10:"las diez",11:"las once",12:"las doce", 13:"la una",14:"las dos",15:"las tres",16:"las cuatro",
@@ -20,3 +20,4 @@ m=minuto_string.get(minuto)
 h=hora_string.get(hora)
 resultado = (f"Son {h} {m}")
 print(resultado)
+modulovoz.voz(resultado)
