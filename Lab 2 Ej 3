@@ -1,0 +1,34 @@
+#Ejercicio 3
+from datetime import datetime
+hora={00:"las doce",1:"La una",2:"las dos",3:"las tres", 4:"las cuatro",5:"las cinco",6:"las seis",7:"las siete",8:"las ocho",
+9:"las nueve",10:"las diez",11:"las once",12:"las doce", 13:"la una",14:"las dos",15:"las tres",16:"las cuatro",
+17:"las cinco",18:"las seis",19:"las siete",20:"las ocho",21:"las nueve",22:"las diez",23:"las once",24:"las doce",
+25:"la una"}
+
+minutos_lindos={00:"en punto",5:"y cinco",10:"y diez",15:"y cuarto",20:"y veinte",25:"y veinticinco",30:"Y media",
+35:"y treinta y cinco",40:"menos veinte",45:"menos cuarto",50:"menos diez",55:"menos cinco"}
+
+hora_usuario=input(f"Ingrese una hora: ")
+minuto_usuario=input(f"ingrese minutos: ")
+#dividir por 5 y que devuelva el entero, entonces multiplicar por 5 
+# si el resto en mayor a 0,5 redondear para arriba y si no para abajo
+if hora_usuario!="":
+    hora_usuario=int(hora_usuario)
+    minuto_usuario=int(minuto_usuario)
+    m=minutos_lindos.get(minuto_usuario)
+    if minuto_usuario>=40:
+        hora_usuario+=1
+    h=hora.get(hora_usuario)
+    print(f"Son {h} {m}")
+
+if hora_usuario=="" or minuto_usuario=="":
+    hora_usuario=int(datetime.now().hour)
+    minuto_usuario=int(datetime.now().minute)
+    if minuto_usuario not in minutos_lindos:
+        minuto_usuario=(minuto_usuario//5)*5
+    if minuto_usuario>=40:
+        hora_usuario+=1
+    
+    m=minutos_lindos.get(minuto_usuario)
+    h=hora.get(hora_usuario)
+    print(f"Son {h} {m}")
